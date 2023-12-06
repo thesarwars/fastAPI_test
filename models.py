@@ -24,7 +24,7 @@ class Client(Base):
     id = Column(Integer, primary_key=True, index=True)
     full_name = Column(String, index=True)
     # books = relationship('Book', secondary='book_client_link', back_populates='author')
-    # books = relationship("Book", secondary='book_client_link', back_populates="clients")
+    books = relationship("Book", secondary='book_client_link', back_populates="clients")
     
 class BookClientLink(Base):
     __tablename__ = 'book_client_link'
