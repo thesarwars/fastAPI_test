@@ -16,7 +16,7 @@ class Book(Base):
     title = Column(String, index=True)
     author_id = Column(Integer, ForeignKey('authors.id'))
     # author = relationship('Author', back_populates='books')
-    # clients = relationship("Client", secondary='book_client_link', back_populates="books")
+    clients = relationship("Client", secondary='book_client_link', back_populates="books")
     
 class Client(Base):
     __tablename__ = 'clients'
